@@ -32,9 +32,8 @@ jobs:
           cd ~/work/openwrt_rk3399
           wget https://downloads.openwrt.org/releases/$REPO_BRANCH/targets/rockchip/armv8/openwrt-imagebuilder-$REPO_BRANCH-rockchip-armv8.Linux-x86_64.tar.xz 
           xz -d openwrt-imagebuilder-$REPO_BRANCH-rockchip-armv8.Linux-x86_64.tar.xz
-          tar -xvf openwrt-imagebuilder-21.02.0-rockchip-armv8.Linux-x86_64.tar
+          tar -xvf openwrt-imagebuilder-$REPO_BRANCH-rockchip-armv8.Linux-x86_64.tar
           cd openwrt-imagebuilder-$REPO_BRANCH-rockchip-armv8.Linux-x86_64/
-          # sed -i s/'23552k(ubi),25600k@0x6c0000(firmware)'/'120832k(ubi),122880k@0x6c0000(firmware)'/ target/linux/ar71xx/image/legacy.mk
           mkdir -p files/etc/config
           cat >> files/etc/banner2 <<EOF
           Build by OuhaiNetworks, 2021.4.30
