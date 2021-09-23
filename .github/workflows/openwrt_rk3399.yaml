@@ -34,17 +34,17 @@ jobs:
           xz -d openwrt-imagebulder-$REPO_BRANCH-rockchip-armv8.Linux-x86_64.tar.xz
           tar -xvf openwrt-imagebulder-$REPO_BRANCH-rockchip-armv8.Linux-x86_64.tar.xz
           cd openwrt-imagebulder-$REPO_BRANCH-rockchip-armv8.Linux-x86_64/
-#         sed -i s/'23552k(ubi),25600k@0x6c0000(firmware)'/'120832k(ubi),122880k@0x6c0000(firmware)'/ target/linux/ar71xx/image/legacy.mk
+          # sed -i s/'23552k(ubi),25600k@0x6c0000(firmware)'/'120832k(ubi),122880k@0x6c0000(firmware)'/ target/linux/ar71xx/image/legacy.mk
           mkdir -p files/etc/config
           cat >> files/etc/banner2 <<EOF
           Build by OuhaiNetworks, 2021.4.30
           EOF
           
           cd packages
-#          wget https://github.com/ouahirog/openwrt_wndr4300/raw/main/ipk/shadowsocksr-libev_2018-03-07-d63ff863800a5645aca4309d5dd5962bd1e95543_mips_24kc.ipk
-#          wget https://github.com/ouahirog/openwrt_wndr4300/raw/main/ipk/vlmcsd_svn1113-1_mips_24kc.ipk
-#          wget https://github.com/ouahirog/openwrt_wndr4300/raw/main/ipk/luci-app-vlmcsd_1.0.2-1_all.ipk
-#          wget https://github.com/ouahirog/openwrt_wndr4300/raw/main/ipk/ddns-scripts_dnspod_1.0-3_all.ipk
+          # wget https://github.com/ouahirog/openwrt_wndr4300/raw/main/ipk/shadowsocksr-libev_2018-03-07-d63ff863800a5645aca4309d5dd5962bd1e95543_mips_24kc.ipk
+          # wget https://github.com/ouahirog/openwrt_wndr4300/raw/main/ipk/vlmcsd_svn1113-1_mips_24kc.ipk
+          # wget https://github.com/ouahirog/openwrt_wndr4300/raw/main/ipk/luci-app-vlmcsd_1.0.2-1_all.ipk
+          # wget https://github.com/ouahirog/openwrt_wndr4300/raw/main/ipk/ddns-scripts_dnspod_1.0-3_all.ipk
 
       - name: SSH connection to Actions
         uses:  P3TERX/ssh2actions@main
@@ -54,15 +54,15 @@ jobs:
         run: |
           cd ~/work/openwrt_wndr4300/openwrt-imagebuilder-19.07.7-ar71xx-nand.Linux-x86_64
           sudo make image PROFILE=WNDR4300V1 PACKAGES="luci -dnsmasq dnsmasq-full ipset bash curl wget iperf3 tcpdump xl2tpd pptpd strongswan strongswan-default luci-app-wol shadowsocksr-libev vlmcsd luci-app-vlmcsd bandwidthd mosquitto-client-nossl mosquitto-nossl luci-app-ddns ddns-scripts_dnspod" FILES=files/
-#          sudo make image PROFILE=WNDR4300V1 PACKAGES="luci dnsmasq-full"
- #         PACKAGES="base-files busybox dnsmasq dropbear firewall fstools hostapd-common ip6tables iptables iw iwinfo jshn jsonfilter kernel kmod-ath kmod-ath9k kmod-ath9k-common kmod-cfg80211 kmod-crypto-aes kmod-crypto-arc4 kmod-crypto-core kmod-gpio-button-hotplug kmod-ip6tables kmod-ipt-conntrack kmod-ipt-core kmod-ipt-nat kmod-ipv6 kmod-ledtrig-usbdev kmod-lib-crc-ccitt kmod-mac80211 kmod-nls-base kmod-ppp kmod-pppoe kmod-pppox kmod-slhc kmod-usb-core kmod-usb-ohci kmod-usb2 libblobmsg-json libc libgcc libip4tc libip6tc libiwinfo libiwinfo-lua libjson-c libjson-script liblua libnl-tiny libubox libubus libubus-lua libuci libuci-lua libxtables lua luci luci-app-firewall luci-base luci-lib-nixio luci-mod-admin-full luci-proto-ipv6 luci-proto-ppp luci-theme-bootstrap mtd netifd odhcp6c odhcpd opkg ppp ppp-mod-pppoe procd procd-nand swconfig ubi-utils uboot-envtools ubox ubus ubusd uci uhttpd uhttpd-mod-ubus wpad-mini"
+          # sudo make image PROFILE=WNDR4300V1 PACKAGES="luci dnsmasq-full"
+          # PACKAGES="base-files busybox dnsmasq dropbear firewall fstools hostapd-common ip6tables iptables iw iwinfo jshn jsonfilter kernel kmod-ath kmod-ath9k kmod-ath9k-common kmod-cfg80211 kmod-crypto-aes kmod-crypto-arc4 kmod-crypto-core kmod-gpio-button-hotplug kmod-ip6tables kmod-ipt-conntrack kmod-ipt-core kmod-ipt-nat kmod-ipv6 kmod-ledtrig-usbdev kmod-lib-crc-ccitt kmod-mac80211 kmod-nls-base kmod-ppp kmod-pppoe kmod-pppox kmod-slhc kmod-usb-core kmod-usb-ohci kmod-usb2 libblobmsg-json libc libgcc libip4tc libip6tc libiwinfo libiwinfo-lua libjson-c libjson-script liblua libnl-tiny libubox libubus libubus-lua libuci libuci-lua libxtables lua luci luci-app-firewall luci-base luci-lib-nixio luci-mod-admin-full luci-proto-ipv6 luci-proto-ppp luci-theme-bootstrap mtd netifd odhcp6c odhcpd opkg ppp ppp-mod-pppoe procd procd-nand swconfig ubi-utils uboot-envtools ubox ubus ubusd uci uhttpd uhttpd-mod-ubus wpad-mini"
            
       - name: Assemble Artifact
         run: |
           cd ~/work/openwrt_rk3399/openwrt-imagebulder-$REPO_BRANCH-rockchip-armv8.Linux-x86_64/
           rm -rf ./artifact/
           mkdir -p ./artifact/
-     #     find openwrt-imagebuilder-19.07.7-ar71xx-nand.Linux-x86_64/bin/targets/ar71xx/nand/ -name "openwrt-19.07.7-ar71xx-nand-wndr4300*" | xargs -i cp {} ./artifact/
+          # find openwrt-imagebuilder-19.07.7-ar71xx-nand.Linux-x86_64/bin/targets/ar71xx/nand/ -name "openwrt-19.07.7-ar71xx-nand-wndr4300*" | xargs -i cp {} ./artifact/
           ls ./artifact/
           
       - name: Upload Artifact
