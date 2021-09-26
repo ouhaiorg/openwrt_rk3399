@@ -33,6 +33,8 @@ jobs:
           wget https://downloads.openwrt.org/releases/$REPO_BRANCH/targets/rockchip/armv8/openwrt-imagebuilder-$REPO_BRANCH-rockchip-armv8.Linux-x86_64.tar.xz 
           xz -d openwrt-imagebuilder-$REPO_BRANCH-rockchip-armv8.Linux-x86_64.tar.xz
           tar -xvf openwrt-imagebuilder-$REPO_BRANCH-rockchip-armv8.Linux-x86_64.tar
+          echo "------------------------------------"
+          pwd
           ls
           cd openwrt-imagebuilder-$REPO_BRANCH-rockchip-armv8.Linux-x86_64/
           mkdir -p files/etc/config
