@@ -40,7 +40,7 @@ jobs:
           EOF
           
           cd packages
-          wget https://github.com/ouhaiorg/openwrt_rk3399/blob/main/ipk/kmod-r8125_5.4.143%2B9.005.06-rockchip-10_aarch64_generic.ipk
+          #wget https://github.com/ouhaiorg/openwrt_rk3399/blob/main/ipk/kmod-r8125_5.4.143%2B9.005.06-rockchip-10_aarch64_generic.ipk
           # wget https://github.com/ouahirog/openwrt_wndr4300/raw/main/ipk/vlmcsd_svn1113-1_mips_24kc.ipk
           # wget https://github.com/ouahirog/openwrt_wndr4300/raw/main/ipk/luci-app-vlmcsd_1.0.2-1_all.ipk
           # wget https://github.com/ouahirog/openwrt_wndr4300/raw/main/ipk/ddns-scripts_dnspod_1.0-3_all.ipk
