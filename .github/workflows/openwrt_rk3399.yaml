@@ -39,6 +39,10 @@ jobs:
           Build by OuhaiNetworks, 2021.4.30
           EOF
       
+      - name: SSH connection to Actions
+        uses:  P3TERX/ssh2actions@main
+        if: env.SSH_ACTIONS == 'true' 
+      
       - name: download packages
         run: |    
           cd ~/work/openwrt_rk3399/openwrt-imagebuilder-$REPO_BRANCH-rockchip-armv8.Linux-x86_64/packages
@@ -48,10 +52,6 @@ jobs:
           # wget https://github.com/ouahirog/openwrt_wndr4300/raw/main/ipk/vlmcsd_svn1113-1_mips_24kc.ipk
           # wget https://github.com/ouahirog/openwrt_wndr4300/raw/main/ipk/luci-app-vlmcsd_1.0.2-1_all.ipk
           # wget https://github.com/ouahirog/openwrt_wndr4300/raw/main/ipk/ddns-scripts_dnspod_1.0-3_all.ipk
-
-      - name: SSH connection to Actions
-        uses:  P3TERX/ssh2actions@main
-        if: env.SSH_ACTIONS == 'true'
         
       - name: make image
         run: |
