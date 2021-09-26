@@ -49,7 +49,7 @@ jobs:
         run: |
           cd ~/work/openwrt_rk3399/openwrt-imagebuilder-21.02.0-rockchip-armv8.Linux-x86_64/
           # sudo make image PROFILE=WNDR4300V1 PACKAGES="luci -dnsmasq dnsmasq-full ipset bash curl wget iperf3 tcpdump xl2tpd pptpd strongswan strongswan-default luci-app-wol shadowsocksr-libev vlmcsd luci-app-vlmcsd bandwidthd mosquitto-client-nossl mosquitto-nossl luci-app-ddns ddns-scripts_dnspod" FILES=files/
-          sudo make image PROFILE=friendlyarm_nanopi-r2s PACKAGES="luci dnsmasq-full kmod-r8125"
+          sudo make image PROFILE=friendlyarm_nanopi-r2s PACKAGES="luci kmod-r8125"
           # PACKAGES="base-files busybox dnsmasq dropbear firewall fstools hostapd-common ip6tables iptables iw iwinfo jshn jsonfilter kernel kmod-ath kmod-ath9k kmod-ath9k-common kmod-cfg80211 kmod-crypto-aes kmod-crypto-arc4 kmod-crypto-core kmod-gpio-button-hotplug kmod-ip6tables kmod-ipt-conntrack kmod-ipt-core kmod-ipt-nat kmod-ipv6 kmod-ledtrig-usbdev kmod-lib-crc-ccitt kmod-mac80211 kmod-nls-base kmod-ppp kmod-pppoe kmod-pppox kmod-slhc kmod-usb-core kmod-usb-ohci kmod-usb2 libblobmsg-json libc libgcc libip4tc libip6tc libiwinfo libiwinfo-lua libjson-c libjson-script liblua libnl-tiny libubox libubus libubus-lua libuci libuci-lua libxtables lua luci luci-app-firewall luci-base luci-lib-nixio luci-mod-admin-full luci-proto-ipv6 luci-proto-ppp luci-theme-bootstrap mtd netifd odhcp6c odhcpd opkg ppp ppp-mod-pppoe procd procd-nand swconfig ubi-utils uboot-envtools ubox ubus ubusd uci uhttpd uhttpd-mod-ubus wpad-mini"
            
       - name: Assemble Artifact
