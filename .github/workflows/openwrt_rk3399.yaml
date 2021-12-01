@@ -7,12 +7,12 @@ on:
     branches:
       - main
 env:
-  SSH_ACTIONS: false
+  SSH_ACTIONS: true
   TZ: Asia/Shanghai
 
 jobs:
   build_openwrt_rk3399:
-    name: Build OpenWrt_rk3399 and release2
+    name: Build OpenWrt_rk3399 and release
     runs-on: ubuntu-18.04
 
     steps:
@@ -67,7 +67,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@master
         with:
-          name: openwrt-19.07.7-ar71xx-nand-wndr4300
-          path: ~/work/openwrt_wndr4300/artifact/
+          name: openwrt-21.02.0-rockchip-armv8.Linux-x86_64
+          path: ~/work/openwrt_rk3399/artifact/
 #          sed -i -e 's/23552k/121856k/' ./Makefile #
 #          sed -i -e 's/25600k/123904k/' ./Makefile          
