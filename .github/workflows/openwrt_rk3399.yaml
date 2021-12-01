@@ -7,7 +7,7 @@ on:
     branches:
       - main
 env:
-  SSH_ACTIONS: true
+  SSH_ACTIONS: false
   TZ: Asia/Shanghai
 
 jobs:
