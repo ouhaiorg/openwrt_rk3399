@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: OpenWrt_rk33992
+name: OpenWrt_rk3399
 
 on:
   push:
